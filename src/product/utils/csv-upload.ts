@@ -10,7 +10,7 @@ import {
   formatProductData,
   formatVariant,
   promptResponse,
-} from '../utils';
+} from '.';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
@@ -21,7 +21,7 @@ export class CsvUploadTask {
     private readonly configService: ConfigService,
   ) {}
 
-  @Cron('* 1 * * * *')
+  @Cron('0 0 * * *')
   /**
    * This function is run every minute by the scheduler.
    * It reads the data.txt file line by line, and for each line, it does the following:
